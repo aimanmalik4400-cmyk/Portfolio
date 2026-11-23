@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aiman Malik | My Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --black: #100b18;
+    --dark: #191124;
+    --card: #21152f;
+    --purple: #a75ce0;
+    --lavender: #d7a7ff;
+    --pink: #ff9acb;
+    --white: #fff8ff;
+    --muted: #c5b8d0;
+}
+
+body {
+    background: var(--black);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+/* KUROMI ORIGINAL SVG CHARACTER */
+
+.kuromi-art {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* NAVBAR */
+
+nav {
+    height: 85px;
+    padding: 0 9%;
+    background: #160f21;
+    border-bottom: 1px solid #75449a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--lavender);
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+/* LITTLE KUROMI ON NAVBAR */
+
+.nav-kuromi {
+    position: absolute;
+    width: 85px;
+    height: 100px;
+    top: -21px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 110;
+    pointer-events: none;
+    animation: navBounce 2.5s infinite ease-in-out;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    padding: 70px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+    radial-gradient(circle at 78% 30%, #492365 0%, transparent 38%),
+    #100b18;
+}
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+    top: 12%;
+    left: 7%;
+    font-size: 45px;
+    color: var(--pink);
+    opacity: .5;
+}
+
+.hero::after {
+    content: "♡";
+    position: absolute;
+    bottom: 12%;
+    right: 12%;
+    font-size: 70px;
+    color: var(--lavender);
+    opacity: .3;
+}
+
+/* LARGE KUROMI BACKGROUND */
+
+.hero-kuromi {
+    position: absolute;
+    width: 420px;
+    height: 460px;
+    top: 8%;
+    left: 20%;
+    opacity: .28;
+    z-index: 0;
+    pointer-events: none;
+    animation: float 4s infinite ease-in-out;
+    filter: drop-shadow(0 0 25px #c78bff);
+}
+
+.hero-text {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+    animation: slideIn 1s ease;
+}
+
+.tag {
+    color: var(--pink);
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(43px, 6vw, 70px);
+    line-height: 1.2;
+    margin: 22px 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero h1 span {
+    color: var(--lavender);
+    text-shadow: 0 0 25px #a75ce088;
+}
+
+.hero p {
+    max-width: 560px;
+    color: #d0c1da;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 30px;
+    background: linear-gradient(100deg, #8139b5, #c17be9);
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 5px 25px #a75ce044;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(100deg, #c17be9, #ff9acb);
+    color: #190e25;
+}
+
+/* RIGHT DECORATION */
+
+.hero-card {
+    width: 270px;
+    height: 330px;
+    border: 2px solid #bd83ed;
+    border-radius: 48% 48% 25px 25px;
+    background: linear-gradient(145deg, #512c70, #171020);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 45px #713a9c77;
+    z-index: 2;
+    animation: float 3s infinite ease-in-out;
+}
+
+.hero-card span {
+    font-size: 100px;
+}
+
+/* GENERAL SECTION */
+
+section {
+    padding: 90px 10%;
+}
+
+.section-label {
+    color: var(--pink);
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 43px);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--lavender);
+}
+
+/* ABOUT ME */
+
+.about {
+    background: linear-gradient(135deg, #191124, #21142d);
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: "✧";
+    position: absolute;
+    top: 50px;
+    left: 5%;
+    color: var(--pink);
+    font-size: 80px;
+    opacity: .2;
+}
+
+.about-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.about-heading .section-title {
+    margin: 0;
+}
+
+/* JUMPING KUROMI */
+
+.jumping-kuromi {
+    width: 100px;
+    height: 115px;
+    animation: jump 1.5s infinite ease-in-out;
+    filter: drop-shadow(0 0 12px #bd83ed77);
+}
+
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 40px;
+    background: #291a39;
+    border: 1px solid #8952ae;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 15px 50px #00000033;
+}
+
+.about-box::before {
+    content: "ABOUT ME ♡";
+    position: absolute;
+    top: -14px;
+    left: 35px;
+    padding: 5px 16px;
+    background: #bd83ed;
+    color: #1b1025;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.about-box p {
+    color: #e0d2e8;
+    line-height: 2;
+    font-size: 15px;
+}
+
+/* MINI STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 850px;
+    margin: 30px auto 0;
+}
+
+.stat {
+    padding: 22px 10px;
+    text-align: center;
+    border: 1px solid #6d438b;
+    background: #1b1226;
+    border-radius: 18px;
+}
+
+.stat h3 {
+    color: var(--pink);
+    font-size: 25px;
+}
+
+.stat p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* EDUCATION TIMELINE */
+
+.education {
+    background: var(--black);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: linear-gradient(var(--pink), var(--purple), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 27px;
+    background: linear-gradient(120deg, #291a39, #1b1226);
+    border: 1px solid #70438f;
+    border-radius: 18px;
+    transition: .3s;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    border-color: var(--pink);
+    box-shadow: 0 10px 30px #a75ce033;
+}
+
+.timeline-item::before {
+    content: "✦";
+    position: absolute;
+    left: -38px;
+    top: 28px;
+    color: var(--pink);
+    font-size: 23px;
+}
+
+.timeline-item small {
+    color: var(--pink);
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+.timeline-item h3 {
+    font-size: 21px;
+    color: var(--lavender);
+    margin: 8px 0;
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    background: #191124;
+}
+
+.experience-card {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 35px;
+    border-radius: 25px;
+    border: 1px solid #8952ae;
+    background: linear-gradient(130deg, #39204e, #21152f);
+    box-shadow: 0 15px 40px #00000033;
+    transition: .3s;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px #a75ce044;
+}
+
+.experience-icon {
+    height: 160px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #bd83ed, #75429a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75px;
+}
+
+.experience-card small {
+    color: var(--pink);
+    letter-spacing: 2px;
+}
+
+.experience-card h3 {
+    color: var(--lavender);
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.experience-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.experience-badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #75429a;
+    color: white;
+    font-size: 12px;
+}
+
+/* CURRENT JOURNEY */
+
+.journey {
+    background:
+    radial-gradient(circle at 10% 50%, #43205e, transparent 45%),
+    #100b18;
+}
+
+.journey-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 45px;
+    text-align: center;
+    border: 1px solid #a75ce0;
+    border-radius: 28px;
+    background: #21152fdd;
+    box-shadow: 0 0 40px #a75ce022;
+}
+
+.journey-box .big-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.journey-box h3 {
+    font-size: 25px;
+    color: var(--lavender);
+    margin-bottom: 15px;
+}
+
+.journey-box p {
+    color: var(--muted);
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* SKILLS */
+
+.skills-section {
+    background: #191124;
+}
+
+.skill-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.skill {
+    padding: 15px 25px;
+    background: linear-gradient(120deg, #342044, #21152f);
+    border: 1px solid #8853aa;
+    border-radius: 15px;
+    color: #ead5ff;
+    transition: .3s;
+    font-size: 14px;
+}
+
+.skill:hover {
+    transform: translateY(-7px) rotate(-2deg);
+    background: #a75ce0;
+    color: white;
+    box-shadow: 0 8px 25px #a75ce055;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background:
+    radial-gradient(circle at center, #47215f, transparent 65%),
+    #100b18;
+    padding: 100px 10%;
+    position: relative;
+}
+
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 55px);
+    color: var(--lavender);
+}
+
+.contact p {
+    color: var(--muted);
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.contact .stars {
+    color: var(--pink);
+    font-size: 30px;
+    letter-spacing: 15px;
+    margin: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #0a0610;
+    color: #bba6cc;
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--pink);
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-17px); }
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    45% { transform: translateY(-23px) rotate(5deg); }
+    65% { transform: translateY(-10px) rotate(-3deg); }
+}
+
+@keyframes navBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-7px); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-35px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 750px) {
+
+    nav {
+        height: auto;
+        min-height: 120px;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 17px;
+        padding: 35px 10px 15px;
+    }
+
+    .nav-kuromi {
+        width: 65px;
+        height: 75px;
+        top: -15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 7%;
+    }
+
+    .hero-kuromi {
+        width: 320px;
+        height: 350px;
+        left: 50%;
+        top: 8%;
+        opacity: .22;
+    }
+
+    .hero-card {
+        width: 210px;
+        height: 240px;
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+
+    .about-heading {
+        gap: 5px;
+    }
+
+    .jumping-kuromi {
+        width: 70px;
+        height: 85px;
+    }
+
+    .about-box {
+        padding: 30px 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-icon {
+        height: 130px;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        left: -30px;
+    }
+
+    .journey-box {
+        padding: 30px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- REUSABLE KUROMI-INSPIRED CHARACTER -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="kuromi" viewBox="0 0 300 350">
+
+    <!-- POINTED EARS -->
+    <path d="M80 120 Q35 85 38 8 Q100 28 125 103Z"
+          fill="#17101f" stroke="#b77be7" stroke-width="5"/>
+
+    <path d="M190 105 Q240 55 265 10 Q277 85 224 127Z"
+          fill="#17101f" stroke="#b77be7" stroke-width="5"/>
+
+    <path d="M77 91 L54 35 Q85 51 106 104Z" fill="#8b4db0"/>
+    <path d="M216 95 L250 35 Q239 78 201 115Z" fill="#8b4db0"/>
+
+    <!-- HOOD -->
+    <path d="M45 180 Q35 65 145 58 Q263 54 258 177
+             Q275 256 211 281 Q150 309 84 277
+             Q34 252 45 180Z"
+          fill="#17101f" stroke="#bd83ed" stroke-width="5"/>
+
+    <!-- FACE -->
+    <ellipse cx="150" cy="183" rx="79" ry="76"
+             fill="#fff6fc" stroke="#33213f" stroke-width="3"/>
+
+    <!-- EYES -->
+    <ellipse cx="119" cy="179" rx="8" ry="12" fill="#21152f"/>
+    <ellipse cx="181" cy="179" rx="8" ry="12" fill="#21152f"/>
+
+    <!-- BLUSH -->
+    <ellipse cx="98" cy="201" rx="15" ry="8" fill="#ff9acb" opacity=".8"/>
+    <ellipse cx="202" cy="201" rx="15" ry="8" fill="#ff9acb" opacity=".8"/>
+
+    <!-- MOUTH -->
+    <path d="M143 211 Q150 217 157 211"
+          fill="none" stroke="#21152f" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- PINK SKULL -->
+    <g transform="translate(150 113)">
+        <path d="M-23 0 Q-23 -27 0 -27 Q23 -27 23 0
+                 Q23 12 10 17 L10 26 L-10 26 L-10 17
+                 Q-23 12 -23 0Z"
+              fill="#ff9acb" stroke="#fff" stroke-width="2"/>
+
+        <circle cx="-9" cy="0" r="5" fill="#24152f"/>
+        <circle cx="9" cy="0" r="5" fill="#24152f"/>
+        <path d="M0 8 L-5 13 L5 13Z" fill="#24152f"/>
+        <path d="M-8 19 V25 M0 19 V25 M8 19 V25"
+              stroke="#24152f" stroke-width="2"/>
+    </g>
+
+    <!-- LITTLE BOW -->
+    <path d="M207 75 Q180 53 186 80 Q191 100 211 89
+             Q231 104 239 84 Q245 60 218 72Z"
+          fill="#ff9acb" stroke="#fff" stroke-width="2"/>
+    <circle cx="213" cy="81" r="5" fill="#fff"/>
+
+    <!-- BODY / OUTFIT -->
+    <path d="M105 252 Q150 231 195 252 L216 322
+             Q150 344 84 322Z"
+          fill="#292035" stroke="#bd83ed" stroke-width="4"/>
+
+    <path d="M122 260 L150 290 L178 260"
+          fill="#ff9acb" stroke="#fff" stroke-width="2"/>
+
+    <!-- HANDS -->
+    <circle cx="83" cy="296" r="17" fill="#fff6fc"/>
+    <circle cx="217" cy="296" r="17" fill="#fff6fc"/>
+
+    <!-- BOOTS -->
+    <ellipse cx="119" cy="333" rx="30" ry="12" fill="#17101f"/>
+    <ellipse cx="181" cy="333" rx="30" ry="12" fill="#17101f"/>
+
+    <!-- SPARKLES -->
+    <path d="M25 166 L31 180 L45 186 L31 192 L25 206
+             L19 192 L5 186 L19 180Z" fill="#ff9acb"/>
+
+    <path d="M270 210 L275 220 L286 225 L275 230
+             L270 241 L265 230 L254 225 L265 220Z"
+          fill="#d7a7ff"/>
+
+</symbol>
+</defs>
+</svg>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">AIMAN<span>♡</span></div>
+
+    <svg class="nav-kuromi" viewBox="0 0 300 350">
+        <use href="#kuromi"/>
+    </svg>
+
+    <div class="nav-links">
+        <a href="#intro">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="intro">
+
+    <svg class="hero-kuromi" viewBox="0 0 300 350">
+        <use href="#kuromi"/>
+    </svg>
+
+    <div class="hero-text">
+
+        <div class="tag">
+            ✦ WELCOME TO MY LITTLE WORLD ✦
+        </div>
+
+        <h1>
+            Hi, I'm <span>Aiman Malik</span>
+        </h1>
+
+        <p>
+            A 19-year-old student, passionate learner and
+            aspiring computer scientist. I believe in
+            creativity, continuous learning and turning
+            ideas into something meaningful.
+
+            Welcome to my personal portfolio!
+        </p>
+
+        <a href="#about" class="button">
+            Discover My World ♡
+        </a>
+
+    </div>
+
+    <div class="hero-card">
+        <span>🖤</span>
+    </div>
+
+</section>
+
+
+<!-- ABOUT ME -->
+
+<section class="about" id="about">
+
+    <div class="section-label">A LITTLE ABOUT MYSELF</div>
+
+    <div class="about-heading">
+
+        <h2 class="section-title">
+            Get To Know <span>Me</span>
+        </h2>
+
+        <!-- JUMPING KUROMI BESIDE ABOUT ME -->
+        <svg class="jumping-kuromi" viewBox="0 0 300 350">
+            <use href="#kuromi"/>
+        </svg>
+
+    </div>
+
+    <div class="about-box">
+
+        <p>
+            Hey! I'm Aiman Malik, a 19-year-old student
+            who loves learning, exploring new ideas and
+            discovering creative ways to express myself.
+
+            I have completed my Matriculation and FSc from
+            Islamabad College for Girls, F-6/2, Islamabad.
+            I also have approximately two years of teaching
+            experience, which has helped me develop confidence,
+            patience and communication skills.
+
+            Currently, I'm beginning an exciting new chapter
+            as a first-semester BS Computer Science student
+            at Air University, Islamabad.
+
+            I'm passionate about personal growth, technology
+            and building a future full of possibilities.
+        </p>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>19</h3>
+            <p>Years Old</p>
+        </div>
+
+        <div class="stat">
+            <h3>02+</h3>
+            <p>Years Teaching</p>
+        </div>
+
+        <div class="stat">
+            <h3>01st</h3>
+            <p>BSCS Semester</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="education" id="education">
+
+    <div class="section-label">MY ACADEMIC BACKGROUND</div>
+
+    <h2 class="section-title">
+        The Journey Of <span>Learning</span>
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <small>01 / MATRICULATION</small>
+
+            <h3>Matriculation 🎓</h3>
+
+            <p>
+                Completed my Matriculation from
+                Islamabad College for Girls (ICG),
+                F-6/2, Islamabad.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <small>02 / INTERMEDIATE</small>
+
+            <h3>Intermediate (FSc) 📚</h3>
+
+            <p>
+                Successfully completed my FSc education
+                from Islamabad College for Girls (ICG),
+                F-6/2, Islamabad.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <small>03 / CURRENT EDUCATION</small>
+
+            <h3>BS Computer Science 💻</h3>
+
+            <p>
+                Currently pursuing BSCS at Air University,
+                Islamabad. First semester student exploring
+                programming and the world of technology.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+    <div class="section-label">WHAT I HAVE DONE</div>
+
+    <h2 class="section-title">
+        My <span>Experience</span>
+    </h2>
+
+    <div class="experience-card">
+
+        <div class="experience-icon">
+            👩🏻‍🏫
+        </div>
+
+        <div>
+
+            <small>PROFESSIONAL EXPERIENCE</small>
+
+            <h3>Teaching Experience</h3>
+
+            <p>
+                I have approximately two years of teaching
+                experience. This journey has taught me how
+                to communicate effectively, explain concepts,
+                manage responsibilities and work patiently
+                with students.
+
+                It has also helped me become more confident
+                and develop valuable leadership skills.
+            </p>
+
+            <div class="experience-badge">
+                ✦ 2 Years Of Experience
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CURRENT JOURNEY -->
+
+<section class="journey">
+
+    <div class="section-label">THE NEXT CHAPTER</div>
+
+    <h2 class="section-title">
+        My <span>Current Journey</span>
+    </h2>
+
+    <div class="journey-box">
+
+        <div class="big-icon">💻</div>
+
+        <h3>Future Computer Scientist</h3>
+
+        <p>
+            Currently studying BS Computer Science
+            at Air University, Islamabad.
+
+            As a first-semester student, I am exploring
+            programming fundamentals, learning C++ and
+            developing my understanding of computer science.
+
+            I look forward to gaining new knowledge,
+            improving my skills and creating meaningful
+            projects throughout my university journey.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="skills-section" id="skills">
+
+    <div class="section-label">WHAT MAKES ME ME</div>
+
+    <h2 class="section-title">
+        My <span>Superpowers</span>
+    </h2>
+
+    <div class="skill-grid">
+
+        <div class="skill">♡ Communication</div>
+        <div class="skill">✦ Teaching</div>
+        <div class="skill">♡ Time Management</div>
+        <div class="skill">✦ Teamwork</div>
+        <div class="skill">♡ Creativity</div>
+        <div class="skill">✦ Problem Solving</div>
+        <div class="skill">♡ C++ Learning</div>
+        <div class="skill">✦ Adaptability</div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="stars">✦ ♡ ✧</div>
+
+    <div class="section-label">
+        THANK YOU FOR STOPPING BY
+    </div>
+
+    <h2>Let's Create Something<br>Beautiful Together!</h2>
+
+    <p>
+        Every great journey starts with a little courage
+        and a big dream.
+    </p>
+
+    <a href="mailto:your-email@example.com" class="button">
+        Say Hello ♡
+    </a>
+
+    <div class="stars">✧ 🖤 ✦</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+    Designed with <span>♥</span> by Aiman Malik |
+    © 2026 All Rights Reserved.
+</footer>
+
+</body>
+</html>
